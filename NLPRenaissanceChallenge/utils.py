@@ -11,7 +11,7 @@ from natsort import natsorted
 import string
 import re
 from natsort import natsorted
-
+from pdf2image import convert_from_path
 # ------------------ File and Text Utilities ------------------
 def count_files_in_folder(folder_path, extensions_list):
     # Initialize counter for files
@@ -116,8 +116,21 @@ def pad_and_resize_images(folder_path):
         for f in skipped_files:
             print(f"- {f}")
 
+# def pdf_to_images(pdf_path, output_folder):
+#     pdf_document = fitz.open(pdf_path)
+
 def pdf_to_images(pdf_path, output_folder):
-    pdf_document = fitz.open(pdf_path)
+    # convert_from_path(pdf_path, output_folder=output_folder, fmt='png', output_file='page', single_file=False, dpi=300)
+    # rename the files to be "page_1.png", "page_2.png", etc.
+    import shutil
+    for i, page in enumerate(sorted(Path(output_folder).glob("page*.png"))):
+        new_name = f"page_{i + 1}.png"
+        shutil.move(str(page), os.path.join(output_folder, new_name))
+        print(f"Renamed {page.name} to {new_name}")
+        
+                             
+    
+    
 def split_and_save_image(image_path, output_folder, last_image_number):
     # Read the image
     img = cv2.imread(image_path)
