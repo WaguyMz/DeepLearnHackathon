@@ -1,0 +1,10 @@
+google-genai
+fitz==1.16.14
+frontend
+tools
+opencv-python
+python-docx
+pillow
+natsort
+pdf2image
+ratelimit
