@@ -5,10 +5,10 @@ Global:
   use_gpu: true
   epoch_num: 500
   log_smooth_window: 20
-  print_batch_step: 100
+  print_batch_step: 200
   save_model_dir: ${DEEPLEARNHACK_ROOT}/pdl/output/PP-OCRv5_server_rec
-  save_epoch_step: 100
-  eval_batch_step: [0, 100]
+  save_epoch_step: 200
+  eval_batch_step: [0, 200]
   cal_metric_during_train: true
   pretrained_model: ${DEEPLEARNHACK_ROOT}/pdl/PP-OCRv5_server_rec_pretrained.pdparams
   checkpoints:
