@@ -15,8 +15,8 @@ Global:
   save_inference_dir:
   use_visualdl: true
   infer_img: ${DEEPLEARNHACK_ROOT}/pdl/dataset/train/imgsForAllPages/image_28.png
-  character_dict_path: ${DEEPLEARNHACK_ROOT}/pdl/PaddleOCR/ppocr/utils/dict/ppocrv5_dict.txt
-  max_text_length: &max_text_length 100
+  character_dict_path: ${DEEPLEARNHACK_ROOT}/pdl/PaddleOCR/ppocr/utils/dict/ppocrv5_latin_dict.txt
+  max_text_length: &max_text_length 50
   infer_mode: false
   use_space_char: true
   distributed: false
