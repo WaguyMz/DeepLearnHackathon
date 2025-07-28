@@ -15,7 +15,8 @@ Global:
   save_inference_dir: null
   use_visualdl: true
   infer_img:  ${DEEPLEARNHACK_ROOT}/pdl/dataset/train/imgsForAllPages/image_28.png
-  save_res_path: ${DEEPLEARNHACK_ROOT}/pdl/output/det/predicts_ppocrv5.txt  
+  save_res_path: ${DEEPLEARNHACK_ROOT}/pdl/output/det/predicts_ppocrv5.txt
+  
   distributed: false
 
 wandb:
