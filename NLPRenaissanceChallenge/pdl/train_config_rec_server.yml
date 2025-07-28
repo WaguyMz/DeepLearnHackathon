@@ -41,13 +41,14 @@ Optimizer:
     factor: 3.0e-05
 
 
+
 Architecture:
   model_type: rec
-  algorithm: SVTR_LCNet
+  algorithm: SVTR_HGNet
   Transform:
   Backbone:
-    name: PPLCNetV3
-    scale: 0.95
+    name: PPHGNetV2_B4
+    text_rec: True
   Head:
     name: MultiHead
     head_list:
@@ -77,6 +78,7 @@ PostProcess:
 Metric:
   name: RecMetric
   main_indicator: acc
+
 
 Train:
   dataset:
@@ -141,5 +143,5 @@ Eval:
   loader:
     shuffle: false
     drop_last: false
-    batch_size_per_card: 48
+    batch_size_per_card: 64
     num_workers: 4
