@@ -7,7 +7,7 @@ Global:
   log_smooth_window: 20
   print_batch_step: 20
   save_model_dir: ${DEEPLEARNHACK_ROOT}/pdl/output/PP-OCRv5_server_det
-  save_epoch_step: 20
+  save_epoch_step: 100
   eval_batch_step: [0, 20]
   cal_metric_during_train: false
   checkpoints:
