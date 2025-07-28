@@ -1,0 +1,19 @@
+shapely
+scikit-image
+pyclipper
+lmdb
+tqdm
+numpy
+rapidfuzz
+opencv-python
+opencv-contrib-python
+cython
+Pillow
+pyyaml
+requests
+albumentations
+# to be compatible with albumentations
+albucore
+packaging
+torch==2.6.0 --index-url https://download.pytorch.org/whl/cu121
+paddlepaddle-gpu
