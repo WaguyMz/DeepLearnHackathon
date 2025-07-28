@@ -11,7 +11,7 @@ Global:
   eval_batch_step: [0, 20]
   cal_metric_during_train: false
   checkpoints:
-  pretrained_model: ${DEEPLEARNHACK_ROOT}/pdl/PPLCNetV3_x0_75_ocr_det.pdparams
+  pretrained_model: ${DEEPLEARNHACK_ROOT}/pdl/PPHGNetV2_B4_ocr_det.pdparams
   save_inference_dir: null
   use_visualdl: true
   infer_img:  ${DEEPLEARNHACK_ROOT}/pdl/dataset/train/imgsForAllPages/image_28.png
