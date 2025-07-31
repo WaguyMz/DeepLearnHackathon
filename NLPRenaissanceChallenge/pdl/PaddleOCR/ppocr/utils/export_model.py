@@ -503,6 +503,7 @@ def export(config, base_model=None, save_path=None):
 
     if not save_path:
         save_path = config["Global"]["save_inference_dir"]
+    
     yaml_path = os.path.join(save_path, "inference.yml")
 
     arch_config = config["Architecture"]

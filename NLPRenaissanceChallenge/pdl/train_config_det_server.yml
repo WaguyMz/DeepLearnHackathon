@@ -3,16 +3,17 @@ Global:
   debug: false
   use_wandb: true
   use_gpu: true
-  epoch_num: &epoch_num 500
+  epoch_num: &epoch_num 50
   log_smooth_window: 20
   print_batch_step: 20
   save_model_dir: ${DEEPLEARNHACK_ROOT}/pdl/output/PP-OCRv5_server_det
-  save_epoch_step: 100
+  save_epoch_step: 10
   eval_batch_step: [0, 20]
   cal_metric_during_train: false
   checkpoints:
   pretrained_model: ${DEEPLEARNHACK_ROOT}/pdl/PPHGNetV2_B4_ocr_det.pdparams
-  save_inference_dir: null
+  save_inference_dir: ${DEEPLEARNHACK_ROOT}/pdl/output/PP-OCRv5_server_det/inference
+  export_with_pir : false
   use_visualdl: true
   infer_img:  ${DEEPLEARNHACK_ROOT}/pdl/dataset/train/imgsForAllPages/image_28.png
   save_res_path: ${DEEPLEARNHACK_ROOT}/pdl/output/det/predicts_ppocrv5.txt

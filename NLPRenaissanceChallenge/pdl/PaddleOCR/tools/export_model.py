@@ -29,6 +29,10 @@ def main():
     FLAGS = ArgsParser().parse_args()
     config = load_config(FLAGS.config)
     config = merge_config(config, FLAGS.opt)
+    
+    print("Configuration loaded:")
+    for key, value in config.items():
+        print(f"{key}: {value}")
     # export model
     export(config)
 

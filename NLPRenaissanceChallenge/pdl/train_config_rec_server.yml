@@ -3,16 +3,17 @@ Global:
   debug: false
   use_wandb: true
   use_gpu: true
-  epoch_num: 500
+  epoch_num: 50
   log_smooth_window: 20
   print_batch_step: 200
   save_model_dir: ${DEEPLEARNHACK_ROOT}/pdl/output/PP-OCRv5_server_rec
-  save_epoch_step: 200
-  eval_batch_step: [0, 200]
+  save_epoch_step: 10
+  eval_batch_step: [0, 2]
   cal_metric_during_train: true
   pretrained_model: ${DEEPLEARNHACK_ROOT}/pdl/PP-OCRv5_server_rec_pretrained.pdparams
   checkpoints:
-  save_inference_dir:
+  export_with_pir : false
+  save_inference_dir: ${DEEPLEARNHACK_ROOT}/pdl/output/PP-OCRv5_server_rec/inference
   use_visualdl: true
   infer_img: ${DEEPLEARNHACK_ROOT}/pdl/dataset/train/imgsForAllPages/image_28.png
   character_dict_path: ${DEEPLEARNHACK_ROOT}/pdl/PaddleOCR/ppocr/utils/dict/ppocrv5_latin_dict.txt
@@ -93,7 +94,7 @@ Train:
         img_mode: BGR
         channel_first: false
     - RecConAug:
-        prob: 0.5
+        prob: 0.2
         ext_data_num: 2
         image_shape: [48, 320, 3]
         max_text_length: *max_text_length

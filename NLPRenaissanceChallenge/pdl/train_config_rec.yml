@@ -7,13 +7,13 @@ Global:
   log_smooth_window: 20
   print_batch_step: 100
   save_model_dir: ${DEEPLEARNHACK_ROOT}/pdl/output/PP-OCRv5_mobile_rec
-  save_epoch_step: 200
+  save_epoch_step: 2
   eval_batch_step: [0, 100]
   cal_metric_during_train: true
   pretrained_model: ${DEEPLEARNHACK_ROOT}/pdl/latin_PP-OCRv5_mobile_rec_pretrained.pdparams
   checkpoints:
   save_inference_dir:
-  use_visualdl: true
+  use_visualdl: false
   infer_img: ${DEEPLEARNHACK_ROOT}/pdl/dataset/train/imgsForAllPages/image_28.png
   character_dict_path: ${DEEPLEARNHACK_ROOT}/pdl/PaddleOCR/ppocr/utils/dict/ppocrv5_latin_dict.txt
   max_text_length: &max_text_length 50 
@@ -25,7 +25,7 @@ Global:
 
 wandb:
   project: NLPRenaissanceChallenge
-  name : PP-OCRv5_mobile_rec
+  name : PP-OCRv5_mobile_rec_no_augment
 
 
 Optimizer:
@@ -91,7 +91,7 @@ Train:
         img_mode: BGR
         channel_first: false
     - RecConAug:
-        prob: 0.5
+        prob: 0.01
         ext_data_num: 2
         image_shape: [48, 320, 3]
         max_text_length: *max_text_length
